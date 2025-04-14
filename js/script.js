@@ -55,3 +55,15 @@ function renderPage(num) {
         });
     });
 }
+
+function goPrevious() {
+    if (pageNum <= 1) return;
+    pageNum--;
+    renderPage(pageNum);
+}
+
+function goNext() {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++;
+    renderPage(pageNum);
+}
