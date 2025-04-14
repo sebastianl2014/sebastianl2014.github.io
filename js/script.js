@@ -29,3 +29,29 @@ function attachTopScroller (elementId){
         return false;
     });
 };
+
+const url = 'img/CV_Draft4_2024_Colour-33.pdf';
+
+// Load the PDF
+pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+    pdfDoc = pdfDoc_;
+    renderPage(pageNum);
+});
+
+let pageNum = 1;
+let pdfDoc = null;
+
+function renderPage(num) {
+    pdfDoc.getPage(num).then(function (page) {
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale for zoom
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        page.render({
+            canvasContext: ctx,
+            viewport: viewport
+        });
+    });
+}
