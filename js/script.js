@@ -5,6 +5,11 @@ $(window).on("load", function() {
 $(document).ready(function() {
     $("#currentYear").text((new Date()).getFullYear());
     attachTopScroller(".scrollUp");
+
+    // Initialize the carousel
+    $('#myCarousel').carousel({
+        interval: 2000 // Adjust the interval time in milliseconds as you need
+    });
 });
 
 function attachTopScroller (elementId){
@@ -15,6 +20,7 @@ function attachTopScroller (elementId){
             $(elementId).fadeOut();
         }
     });
+
     // Scroll To Top Animation
     $(elementId).click(function() {
         $("html, body").animate({
