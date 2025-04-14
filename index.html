@@ -49,6 +49,24 @@
           height: 80vh; /* or a fixed height like 800px */
           margin: 2rem 0;
         }
+
+        .pdf-container {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            padding: 1rem;
+            overflow: auto;
+        }
+
+        #pdfCanvas {
+            width: 100%;
+            height: auto;
+        }
         
     </style>
 
@@ -199,9 +217,14 @@
 -->
                   <div class="pdf-container" id="pdfViewer">
                     <canvas id="pdfCanvas"></canvas>
-                    <button onclick="goPrevious()">Previous</button>
-                    <button onclick="goNext()">Next</button>
+
                 </div>
+
+                  <div class="text-center mb-4">
+                    <button onclick="goPrevious()" class="btn btn-secondary">Previous</button>
+                    <button onclick="goNext()" class="btn btn-secondary">Next</button>
+                </div>
+                                  
                   
               </div>
             </div>
@@ -281,6 +304,7 @@
         </div>
     </footer>
     <!-- jQuery first, then Bootstrap JS. -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="dist/jquery/jquery.min.js"></script>
     <script src="dist/popper/popper.min.js" integrity=""></script>
     <script src="dist/bootstrap/js/bootstrap.min.js"></script>
@@ -291,7 +315,44 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script>
+        const url = 'img/CV_Draft4_2024_Colour-33.pdf'; // Adjust path if needed
+        let pageNum = 1;
+        let pdfDoc = null;
+
+        pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            renderPage(pageNum);
+        });
+
+        function renderPage(num) {
+            pdfDoc.getPage(num).then(function (page) {
+                const canvas = document.getElementById('pdfCanvas');
+                const ctx = canvas.getContext('2d');
+                const viewport = page.getViewport({ scale: 1.2 });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                });
+            });
+        }
+
+        function goPrevious() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            renderPage(pageNum);
+        }
+
+        function goNext() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            renderPage(pageNum);
+        }
+    </script>
     
 </body>
 
