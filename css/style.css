@@ -51,6 +51,7 @@ a, a:hover, a:active {
 /*carousel*/
 .carousel-fade .carousel-inner .item {
   transition-property: opacity;
+  transition: opacity 1s ease-in-out;
 }
 .carousel-fade .carousel-inner .item,
 .carousel-fade .carousel-inner .active.left,
@@ -69,13 +70,20 @@ a, a:hover, a:active {
   left: 0;
   transform: translate3d(0,0,0);
 }
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev {
+  transition: left 0.5s ease, transform 0.5s ease; /* Smoother transitions */
+}
+
 .carousel-fade .carousel-control {
-  z-index: 2;
+  z-index: 10;
 }
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
   height: 100%;
+  min-height: 400px;
 }
 .item:nth-child(1) {
   background: darkred;
@@ -87,13 +95,13 @@ a, a:hover, a:active {
   background: orange;
 }
 .caption {
-position: absolute;
-  
-top: 64%;
-  right: 0;
-  padding: 25px; 
-  padding-left: 25px; 
-  left: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centering the caption */
+  padding: 25px;
+  color: #FFE270;
+	
 }
 .carousel-fade .carousel-control {
   z-index: 2;
@@ -107,6 +115,10 @@ top: 64%;
 }
 .carousel-indicators .active { 
   background-color: #FEE16F;
+}
+
+.carousel-control:focus {
+  outline: 2px solid #FEE16F; /* Outline for accessibility */
 }
 .caption h2{
 color:#FFE270;
