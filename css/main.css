@@ -8536,6 +8536,21 @@ img {
   color: #fff;
 }
 
+#pdfViewer {
+    height: 80vh; /* Adjust the height */
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+#pdfCanvas {
+    width: 100%;
+    height: auto;
+}
+
 /*
 Theme Name: Template Name - Bootstrap 4 Template
 Theme URI: https://www.orbitthemes.com
