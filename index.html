@@ -38,7 +38,16 @@
         body {
             padding-top: 70px; /* Adjust depending on your navbar height */
         }
+        .pdf-container {
+            height: 80vh; /* 60% of the screen height */
+            margin: 2rem 0;
+        }
 
+        .pdf-container {
+          height: 80vh; /* or a fixed height like 800px */
+          margin: 2rem 0;
+        }
+        
     </style>
 
     
@@ -180,8 +189,12 @@
             <hr class="featurette-divider">
 
       
-            <div class="pdf-container">
-              <embed src="img/CV_Draft4_2024_Colour-33.pdf" type="application/pdf" width="100%" height="100%">
+            <div class="row">
+              <div class="col-12">
+                <div class="pdf-container">
+                  <embed src="img/CV_Draft4_2024_Colour-33.pdf" type="application/pdf" width="100%" height="100%">
+                </div>
+              </div>
             </div>
 
 
