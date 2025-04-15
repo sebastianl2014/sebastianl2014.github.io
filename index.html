@@ -582,17 +582,26 @@
     <script> 
     document.addEventListener("DOMContentLoaded", function () {
   const navLink = document.getElementById("dynamicNav");
-
+  let hoverTimeout;
+  let hovered = false;
         
   navLink.addEventListener("mouseover", function () {
     if (!navLink.classList.contains("clicked")) {
-      navLink.textContent = "I'm warning you...";
+          // Start the timer to change text after 0.5 seconds
+      hoverTimeout = setTimeout(function () {
+          navLink.textContent = "I'm warning you...";
+          hovered = true;
+      }, 500);
     }
   });
 
   navLink.addEventListener("mouseout", function () {
     if (!navLink.classList.contains("clicked")) {
-      navLink.textContent = "That was close... thanks for listening :)";
+        if (hovered) {
+            navLink.textContent = "That was close... thanks for listening :)";
+        }
+        clearTimeout(hoverTimeout);
+     
     }
   });
 
@@ -600,6 +609,7 @@
     e.preventDefault();
     navLink.textContent = "Thank you for formally accepting my PhD application!";
     navLink.classList.add("clicked");
+    clearTimeout(hoverTimeout);
   });
 });
 
