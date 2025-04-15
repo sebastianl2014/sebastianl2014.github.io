@@ -110,6 +110,21 @@
         #customNavbar .navbar-brand {
           color: white; /* Adjust for contrast */
         }
+
+        .hoverbutton-change {
+          display: inline-block;
+          position: relative;
+          color: inherit;
+        }
+        
+        .hoverbutton-change::before {
+          content: 'Don't click here...';
+        }
+        
+        .hoverbutton-change:hover::before {
+          content: 'I'm warning you';
+        }
+        
         
                 
     </style>
@@ -141,7 +156,7 @@
                         <a class="nav-link" href="#">Want to know a bit more about my projects? (coming soon)</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Don't click here...</a>
+                        <a class="nav-link hoverbutton-change" href="#">Don't click here...</a>
                     </li>
                 </ul>
           </div>
