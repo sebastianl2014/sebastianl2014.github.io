@@ -90,7 +90,28 @@
             background-color: rgba(255,255,255,0.8);
             color: black;
         }
+
+        .btn-pdfdownload {
+            background-color: rgba(139,28,98, 1);  /* Your custom color */
+            color: white;
+            border: none;
+        }
         
+        .btn-pdfdownload:hover {
+            background-color: rgba(255,255,255,0.8);  /* Darker on hover */
+            color: black;
+        }
+
+        #customNavbar {
+          background-color: rgba(139,28,98, 1); /* Replace with your custom hex color */
+        }
+        
+        #customNavbar .nav-link,
+        #customNavbar .navbar-brand {
+          color: white; /* Adjust for contrast */
+        }
+        
+                
     </style>
 
     
@@ -101,7 +122,7 @@
 <body>
     <div class="loader"></div>
     <header id="header">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="customNavbar">
             <a class="navbar-brand" href="#" id="header-logo">
                 <h2 class="featurette-heading">This website is a work in progress!</h2>
             </a>
@@ -216,7 +237,7 @@
                     <p class="lead">
                         Here is a preview of my latest CV. 
                     </p>
-                    <a href="img/CV_Draft5_2025_no_colour-8.pdf" class="btn btn-primary" download>
+                    <a href="img/CV_Draft5_2025_no_colour-8.pdf" class="btn btn-pdfdownload" download>
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
@@ -256,7 +277,7 @@
            
                         </video>
                     </div>
-                    <a href="img/Computing_Project__sl2014 (1).pdf" class="btn btn-primary" download>
+                    <a href="img/Computing_Project__sl2014 (1).pdf" class="btn btn-pdfdownload" download>
                         <i class="fas fa-download"></i> Download pdf
                     </a>
                 </div>
@@ -278,7 +299,7 @@
                     <p class="lead">
                         Here is a preview of my BSc research review project 
                     </p>
-                    <a href="img/ResearchReview_SebastianLjung-1-1.pdf" class="btn btn-primary" download>
+                    <a href="img/ResearchReview_SebastianLjung-1-1.pdf" class="btn btn-pdfdownload" download>
                         <i class="fas fa-download"></i> Download pdf
                     </a>
                 </div>
