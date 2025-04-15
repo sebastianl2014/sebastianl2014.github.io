@@ -30,25 +30,4 @@ function attachTopScroller (elementId){
     });
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navLink = document.getElementById("dynamicNav");
-
-  navLink.addEventListener("mouseover", function () {
-    if (!navLink.classList.contains("clicked")) {
-      navLink.textContent = "Don't click here...";
-    }
-  });
-
-  navLink.addEventListener("mouseout", function () {
-    if (!navLink.classList.contains("clicked")) {
-      navLink.textContent = "I'm warning you...";
-    }
-  });
-
-  navLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    navLink.textContent = "Thank you for formally accepting my PhD application!";
-    navLink.classList.add("clicked");
-  });
-});
 
