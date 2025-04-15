@@ -594,7 +594,7 @@
       hoverTimeout = setTimeout(function () {
           navLink.textContent = "I'm warning you...";
           hovered = true;
-      }, 200);
+      }, 300);
     }
   });
 
@@ -603,7 +603,7 @@
         if (hovered) {
             setTimeout(function () {
             navLink.textContent = "That was close... thanks for listening :)";
-            }, 200);
+            }, 150);
         }
         clearTimeout(hoverTimeout);
      
