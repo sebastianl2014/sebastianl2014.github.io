@@ -600,7 +600,9 @@
   navLink.addEventListener("mouseout", function () {
     if (!navLink.classList.contains("clicked")) {
         if (hovered) {
+            setTimeout(function () {
             navLink.textContent = "That was close... thanks for listening :)";
+            , 100}
         }
         clearTimeout(hoverTimeout);
      
