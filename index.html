@@ -69,8 +69,31 @@
             width: 100%;
             height: auto;
         }
+
+        .carousel-cta-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background-color: rgba(0,0,0,0.6);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-cta-button:hover {
+            background-color: rgba(255,255,255,0.8);
+            color: black;
+        }
         
     </style>
+
+    
 
     
 </head>
@@ -176,6 +199,10 @@
             <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
+            </a>
+
+            <a href="#about" class="carousel-cta-button btn btn-outline-light btn-sm">
+                Learn More
             </a>
         </div>
         
