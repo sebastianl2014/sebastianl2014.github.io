@@ -169,8 +169,8 @@
 
         .email-text {
           position: absolute;
-          top: -3rem;
-          left: -3rem;
+          top: -0.5rem;
+          left: -0.5rem;
           font-size: 0.85rem;
           color: white;
           white-space: nowrap;
@@ -594,6 +594,10 @@
           navLink.textContent = "I'm warning you...";
           hovered = true;
       }, 300);
+      hoverTimeout = setTimeout(function () {
+          navLink.textContent = "I'm warning you... please";
+          hovered = true;
+      }, 600);
     }
   });
 
