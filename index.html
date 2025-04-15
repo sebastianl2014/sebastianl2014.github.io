@@ -589,11 +589,11 @@
         
   navLink.addEventListener("mouseover", function () {
     if (!navLink.classList.contains("clicked")) {
-          // Start the timer to change text after 0.5 seconds
+          // Start the timer to change text after 0.3 seconds
       hoverTimeout = setTimeout(function () {
           navLink.textContent = "I'm warning you...";
           hovered = true;
-      }, 500);
+      }, 300);
     }
   });
 
