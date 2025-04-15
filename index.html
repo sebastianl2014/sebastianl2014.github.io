@@ -90,6 +90,17 @@
             background-color: rgba(255,255,255,0.8);
             color: black;
         }
+        .carousel-overlay-text {
+          position: absolute;
+          top: 10px;
+          left: 15px;
+          z-index: 10;
+          color: white;
+          background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+          padding: 0.5rem 1rem;
+          border-radius: 8px; 
+          font-weight: bold; 
+        }
 
         .btn-pdfdownload {
             background-color: rgba(136,42,87, 1);  /* Your custom color */
@@ -197,6 +208,11 @@
                 <li data-target="#myCarousel" data-slide-to="3"></li>
                 <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
+
+              <div class="carousel-overlay-text">
+                <h4> You can pause the slideshow by hovering </h4>
+              </div>
+            
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
